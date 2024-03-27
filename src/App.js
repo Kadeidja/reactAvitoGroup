@@ -1,22 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './Assets/img/logo.svg';
+import './Styles/App.css';
+import CarburantType from './Components/Carburant';
+import OrigindataType from './Components/Origindouane';
+import GearBoxType from './Components/Gearbox';
+import StatesdataType from './Components/States';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <>
+        <CarburantType/>
+        <OrigindataType/>
+        <GearBoxType/>
+        <StatesdataType/>
+        </>  
       </header>
     </div>
   );
