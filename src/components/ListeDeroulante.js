@@ -3,7 +3,6 @@ import {useState} from "react";
 
 const ListeDeroulante = ({ options, label, defaultValue }) => {
     const [selectedValue, setSelectedValue] = useState(defaultValue);
-    console.log("option =", options);
     const handleChange = (event) => {
       setSelectedValue(event.target.value);
     };

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import ListeDeroulante from "./ListeDeroulante";
 import InformationAnnonce from "./InformationAnnonce";
+import Showquestion from "./Bubllyquestion";
+import { defaultsData, carburantData, stateData, originData, GearBox, porteData, premiereData, moreData } from "../Datas/datastest";
+
 
 const FormAnnonce = () => {
     const kilometrage = [
@@ -49,8 +52,20 @@ const FormAnnonce = () => {
         <ListeDeroulante options={puissance} label="Puissance" defaultValue="Selectionner" />
         </div>
         <div>
+          <Showquestion defaultsData={carburantData}/>
+          <Showquestion defaultsData={GearBox}/>
+          <Showquestion defaultsData={stateData}/>
+          <Showquestion defaultsData={originData}/>
+          <Showquestion defaultsData={porteData}/>
+          <Showquestion defaultsData={premiereData}/>
+        </div>
+        <div>
         <InformationAnnonce prix="" titre="" description="" />
         </div>
+        <div>
+          <Showquestion defaultsData={moreData}/>
+        </div>
+        
     </div>
   );
 }

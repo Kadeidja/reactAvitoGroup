@@ -8,19 +8,16 @@ const InformationAnnonce = ({ prix, titre, description }) => {
   const handlePrixChange = (event) => {
     const newPrix = event.target.value;
     setPrixSaisi(newPrix);
-    console.log(newPrix);
   };
 
   const handleTitreChange = (event) => {
     const newTitre = event.target.value;
     setTitreSaisi(newTitre);
-    console.log(newTitre);
   };
 
   const handleDescriptionChange = (event) => {
     const newDescription = event.target.value;
     setDescriptionSaisie(newDescription);
-    console.log(newDescription);
   };
 
   return (
