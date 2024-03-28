@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ListeDeroulante from "./ListeDeroulante";
 import InformationAnnonce from "./InformationAnnonce";
 import Showquestion from "./Bubllyquestion";
-import { defaultsData, carburantData, stateData, originData, GearBox, porteData, premiereData, moreData } from "../Datas/datastest";
+import { carburantData, stateData, originData, GearBox, porteData, premiereData, moreData } from "../Datas/datastest";
 
 
 const FormAnnonce = () => {

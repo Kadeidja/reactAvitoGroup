@@ -1,13 +1,10 @@
 import React from "react";
-import FormAnnonce from "./components/FormAnnonce";
+import { RouterProvider } from 'react-router-dom';
+import { router } from "./rooting/rootes";
 
 const App = () => {
 
-  return (
-    <div>
-      <FormAnnonce />
-    </div>
-  );
+  return <RouterProvider rooter={router}></RouterProvider>
 };
 
 export default App;
