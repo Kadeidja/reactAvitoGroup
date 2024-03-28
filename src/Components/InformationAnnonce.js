@@ -25,18 +25,18 @@ const InformationAnnonce = ({ prix, titre, description }) => {
     <div className="annonce">
       <form>
         <div className="prix">
-          <label htmlFor="prix">Prix:</label>
-          <input type="number" id="prix" value={prixSaisi} placeholder="0" onChange={handlePrixChange} required/>
+          <label htmlFor="prix" className="formLabel">Prix:</label>
+          <input type="number" id="prix" value={prixSaisi} placeholder="0" onChange={handlePrixChange} className="formInputtxt" required/>
         </div>
 
         <div className="titre">
-          <label htmlFor="titre">Titre:</label>
-          <input type="text" id="titre" value={titreSaisi} placeholder="Titre de l'annonce" onChange={handleTitreChange} required/>
+          <label htmlFor="titre" className="formLabel">Titre:</label>
+          <input type="text" id="titre" value={titreSaisi} placeholder="Titre de l'annonce" onChange={handleTitreChange} className="formInputtxt" required/>
         </div>
 
         <div className="description">
-          <label htmlFor="description">Description:</label>
-          <input type="text" id="description" value={descriptionSaisie} onChange={handleDescriptionChange} required/>
+          <label htmlFor="description" className="formLabel">Description:</label>
+          <input type="text" id="description" value={descriptionSaisie} onChange={handleDescriptionChange} className="formInputtxt" required/>
         </div>
       </form>
     </div>
