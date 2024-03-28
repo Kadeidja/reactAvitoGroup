@@ -8,7 +8,7 @@ const [questionValue,setquestionValue] = useState('Non définit')
         <div className="showquestion">
                         <div key={defaultsData.questionid}>
                         <div className='questionTTlSpace'>
-                            <span id={defaultsData.questionttl+"spandid"}><img src={carUn} className='imgTtl'/></span>
+                            <span id={defaultsData.questionttl+"spandid"}><img src={carUn} className='imgTtl' alt='A Svg car icon'/></span>
                             <label id={defaultsData.questionttl+"labeldid"} className='questionTTl'>{defaultsData.askedquestions}</label>
                         </div>
                          <div className='questionResSpace'>
