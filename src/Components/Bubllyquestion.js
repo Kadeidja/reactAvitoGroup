@@ -8,6 +8,7 @@ const [questionValue,setquestionValue] = useState('Non définit')
                         <div key={defaultsData.questionid}>
                         <div>
                             <label>{defaultsData.askedquestions}</label>
+                            <p>{defaultsData.addinfo}</p>
                          </div>
                         
                             {defaultsData.answersquestion.map((answersolo)=>{
