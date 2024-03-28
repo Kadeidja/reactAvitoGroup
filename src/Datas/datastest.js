@@ -58,7 +58,7 @@ export const premiereData = {
 };
 
 export const moreData = {
-    questionttl:'Premiere',
+    questionttl:'Détails',
     addinfo:'Ajouter des détails supplémentaires',
     askedquestions:'Plus de détails',
     answersquestion:['Jantes aluminium', 'Airbags', 'Climatisation', 'Système de navigation/GPS',

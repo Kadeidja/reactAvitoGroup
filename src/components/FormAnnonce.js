@@ -38,22 +38,26 @@ const FormAnnonce = () => {
         { value: "Dacia", label: "Dacia" },
         { value: "Mercedes", label: "Mercedes" },
         { value: "ferrari", label: "ferrari" },
-        { value: "ferrari", label: "ferrari" },
-        { value: "ferrari", label: "ferrari" }
+        { value: "porsch", label: "porsch" },
+        { value: "renault", label: "renault" }
       ];
 
       const [annonceData, setAnnonceData] = useState({
         prix: "",
         titre: "",
         description: "",
-        carburant: "",
-        boiteVitesse: "",
-        state: "",
-        origin: "",
-        porte: "",
-        premiere: "",
-        more: []
+
       })
+
+      const updateFormData = (fieldName, value) => {
+        setAnnonceData((prevData) => ({...prevData, [fieldName]: value}))
+      }
+
+      const updateFormList = (fieldName, value) => {
+        setAnnonceData((prevData) => ({
+          ...prevData,
+          [fieldName]: value}));
+      };
 
       const handleFormData = () => {
         console.log("L'annonce :", annonceData)
@@ -63,29 +67,25 @@ const FormAnnonce = () => {
   return (
     <div>
         <div>
-        <ListeDeroulante options={kilometrage} label="Kilométrage" defaultValue="Selectionner" />
-        <ListeDeroulante options={marque} label="Marque" defaultValue="Selectionner" />
-        <ListeDeroulante options={modeleAnnee} label="Modèle Année" defaultValue="Selectionner" />
-        <ListeDeroulante options={puissance} label="Puissance" defaultValue="Selectionner" />
+        <ListeDeroulante options={kilometrage} label="Kilométrage" defaultValue="Selectionner" updateSelection={updateFormList}/>
+        <ListeDeroulante options={marque} label="Marque" defaultValue="Selectionner" updateSelection={updateFormList}/>
+        <ListeDeroulante options={modeleAnnee} label="Modèle Année" defaultValue="Selectionner" updateSelection={updateFormList}/>
+        <ListeDeroulante options={puissance} label="Puissance" defaultValue="Selectionner" updateSelection={updateFormList}/>
         </div>
         <div>
-          <Showquestion defaultsData={carburantData}/>
-          </div>
-          <div>
-          <Showquestion defaultsData={GearBox}/>
-          </div>
-          <div>
-          <Showquestion defaultsData={stateData}/>
-          <Showquestion defaultsData={originData}/>
-          <Showquestion defaultsData={porteData}/>
-          <Showquestion defaultsData={premiereData}/>
+          <Showquestion defaultsData={carburantData} updateFormData={updateFormData} />
+          <Showquestion defaultsData={GearBox} updateFormData={updateFormData}/>
+          <Showquestion defaultsData={stateData} updateFormData={updateFormData}/>
+          <Showquestion defaultsData={originData} updateFormData={updateFormData}/>
+          <Showquestion defaultsData={porteData} updateFormData={updateFormData}/>
+          <Showquestion defaultsData={premiereData} updateFormData={updateFormData}/>
         </div>
         <div>
         <InformationAnnonce prix={annonceData.prix} titre={annonceData.titre} description={annonceData.description}
           setAnnonceData={setAnnonceData} />
         </div>
         <div>
-          <Showquestion defaultsData={moreData}/>
+          <Showquestion defaultsData={moreData} updateFormData={updateFormData}/>
         </div>
         <button onClick={handleFormData}>Confirmer</button>
         

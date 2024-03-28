@@ -1,10 +1,12 @@
 import React from "react";
 import {useState} from "react";
 
-const ListeDeroulante = ({ options, label, defaultValue }) => {
+const ListeDeroulante = ({ options, label, defaultValue, updateSelection }) => {
     const [selectedValue, setSelectedValue] = useState(defaultValue);
     const handleChange = (event) => {
+      const selectListValue = event.target.value;
       setSelectedValue(event.target.value);
+      updateSelection(label.toLowerCase(), selectListValue)
     };
   
     return (
