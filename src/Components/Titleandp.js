@@ -1,4 +1,4 @@
-import App from "../styles/app.css";
+import App from "../Styles/App.css";
 function TitleParagraph({defaultTitlePara}){
     return (
         <div key={defaultTitlePara.ttlparaid} className="bigttlClass">

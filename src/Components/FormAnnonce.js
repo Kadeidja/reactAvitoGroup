@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import ListeDeroulante from "./ListeDeroulante";
 import InformationAnnonce from "./InformationAnnonce";
 import Showquestion from "./Bubllyquestion";
+import TitleParagraph from "./Titleandp";
+import App from "../Styles/App.css";
+
+
 import { defaultsData, carburantData, stateData, originData, GearBox, porteData, premiereData, moreData } from "../Datas/datastest";
 
 
@@ -41,11 +45,22 @@ const FormAnnonce = () => {
         { value: "ferrari", label: "ferrari" },
         { value: "ferrari", label: "ferrari" }
       ];
+      const titleParaOne = 
+        {ttlparaid:"ttlpar1",title:"Détails de l'annonce", para:"Ajouter plus de détails sur votre annonce pour un maximum de visbilité"}
+      ;
+      const titleParaTwo = 
+        {ttlparaid:"ttlpar2",title:"Information de l'annonce",para:"Une annonce avec un prix exacte et une description bien détaillé a 10 fois plus de visibilité"}
+        ;
+
+      const titleParaThree = 
+        {ttlparaid:"ttlpar3",title:"Plus de détails",para:"Ajouter des détails supplémentaires"}
+      ;
 
 
   return (
-    <div>
+    <div className="everyElem">
         <div>
+        <TitleParagraph defaultTitlePara={titleParaOne}/>
         <ListeDeroulante options={kilometrage} label="Kilométrage" defaultValue="Selectionner" />
         <ListeDeroulante options={marque} label="Marque" defaultValue="Selectionner" />
         <ListeDeroulante options={modeleAnnee} label="Modèle Année" defaultValue="Selectionner" />
@@ -60,9 +75,11 @@ const FormAnnonce = () => {
           <Showquestion defaultsData={premiereData}/>
         </div>
         <div>
+        <TitleParagraph defaultTitlePara={titleParaTwo} />
         <InformationAnnonce prix="" titre="" description="" />
         </div>
         <div>
+        <TitleParagraph defaultTitlePara={titleParaThree}/>
           <Showquestion defaultsData={moreData}/>
         </div>
         

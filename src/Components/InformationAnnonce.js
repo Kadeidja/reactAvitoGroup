@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import App from "../Styles/App.css";
 
 const InformationAnnonce = ({ prix, titre, description }) => {
   const [prixSaisi, setPrixSaisi] = useState(prix);
