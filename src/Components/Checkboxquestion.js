@@ -2,10 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import carUn from '../Assets/img/carUn.svg';
 import App from "../Styles/App.css";
-function Showquestion ({defaultsData}){
+function Showquestionchecked ({defaultsData}){
 const [questionValue,setquestionValue] = useState('Non définit')
     return (
-        <div className="showquestion">
+        <div className="showquestioncheck">
                         <div key={defaultsData.questionid}>
                         <div className='questionTTlSpace'>
                             <span id={defaultsData.questionttl+"spandid"}><img src={carUn} className='imgTtl'/></span>
@@ -15,8 +15,8 @@ const [questionValue,setquestionValue] = useState('Non définit')
                             {defaultsData.answersquestion.map((answersolo)=>{
                                 return(
                                 <label for={questionValue} className='questionRes'>
-                                    <input onChange={e => setquestionValue(e.target.value)} type="radio" name={questionValue} value={answersolo} id={questionValue} />
-                                    <span className='questionSpanc'>{answersolo}</span>
+                                    <input onChange={e => setquestionValue(e.target.value)} type="checkbox" name={questionValue} value={answersolo} id={questionValue} />
+                                    {answersolo}
                                 </label>
                                 )
                             })}
@@ -26,4 +26,4 @@ const [questionValue,setquestionValue] = useState('Non définit')
     )
 }
 
-export default Showquestion;
+export default Showquestionchecked;

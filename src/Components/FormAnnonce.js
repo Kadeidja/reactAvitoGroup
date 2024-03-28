@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ListeDeroulante from "./ListeDeroulante";
 import InformationAnnonce from "./InformationAnnonce";
 import Showquestion from "./Bubllyquestion";
+import Showquestionchecked from "./Checkboxquestion";
 import TitleParagraph from "./Titleandp";
 import App from "../Styles/App.css";
 
@@ -80,7 +81,7 @@ const FormAnnonce = () => {
         </div>
         <div>
         <TitleParagraph defaultTitlePara={titleParaThree}/>
-          <Showquestion defaultsData={moreData}/>
+          <Showquestionchecked defaultsData={moreData}/>
         </div>
         
     </div>
