@@ -42,6 +42,23 @@ const FormAnnonce = () => {
         { value: "ferrari", label: "ferrari" }
       ];
 
+      const [annonceData, setAnnonceData] = useState({
+        prix: "",
+        titre: "",
+        description: "",
+        carburant: "",
+        boiteVitesse: "",
+        state: "",
+        origin: "",
+        porte: "",
+        premiere: "",
+        more: []
+      })
+
+      const handleFormData = () => {
+        console.log("L'annonce :", annonceData)
+      }
+
 
   return (
     <div>
@@ -53,18 +70,24 @@ const FormAnnonce = () => {
         </div>
         <div>
           <Showquestion defaultsData={carburantData}/>
+          </div>
+          <div>
           <Showquestion defaultsData={GearBox}/>
+          </div>
+          <div>
           <Showquestion defaultsData={stateData}/>
           <Showquestion defaultsData={originData}/>
           <Showquestion defaultsData={porteData}/>
           <Showquestion defaultsData={premiereData}/>
         </div>
         <div>
-        <InformationAnnonce prix="" titre="" description="" />
+        <InformationAnnonce prix={annonceData.prix} titre={annonceData.titre} description={annonceData.description}
+          setAnnonceData={setAnnonceData} />
         </div>
         <div>
           <Showquestion defaultsData={moreData}/>
         </div>
+        <button onClick={handleFormData}>Confirmer</button>
         
     </div>
   );

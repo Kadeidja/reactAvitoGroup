@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InformationAnnonce = ({ prix, titre, description }) => {
+const InformationAnnonce = ({ prix, titre, description, setAnnonceData }) => {
   const [prixSaisi, setPrixSaisi] = useState(prix);
   const [titreSaisi, setTitreSaisi] = useState(titre);
   const [descriptionSaisie, setDescriptionSaisie] = useState(description);
@@ -8,16 +8,19 @@ const InformationAnnonce = ({ prix, titre, description }) => {
   const handlePrixChange = (event) => {
     const newPrix = event.target.value;
     setPrixSaisi(newPrix);
+    setAnnonceData(prevData => ({ ...prevData, prix: newPrix }));
   };
 
   const handleTitreChange = (event) => {
     const newTitre = event.target.value;
     setTitreSaisi(newTitre);
+    setAnnonceData(prevData => ({ ...prevData, titre: newTitre }));
   };
 
   const handleDescriptionChange = (event) => {
     const newDescription = event.target.value;
     setDescriptionSaisie(newDescription);
+    setAnnonceData(prevData => ({ ...prevData, description: newDescription }));
   };
 
   return (
